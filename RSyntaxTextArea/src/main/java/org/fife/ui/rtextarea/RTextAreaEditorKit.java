@@ -1207,7 +1207,7 @@ public class RTextAreaEditorKit extends DefaultEditorKit {
 				}
 
 			} catch (BadLocationException ble) { // Never happens
-				ble.printStackTrace();
+				// Suppress message for an error callers cannot act on.
 			}
 
 			// if we get here, no natch was found
