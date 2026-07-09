@@ -10,6 +10,7 @@
 package org.fife.ui.rsyntaxtextarea;
 
 import javax.swing.Action;
+import javax.swing.event.DocumentEvent;
 import javax.swing.text.Segment;
 
 
@@ -165,6 +166,23 @@ public interface TokenMaker {
 	 */
 	Token getTokenList(Segment text, int initialTokenType,
 					   int startOffset);
+
+	/**
+	 * Called when text is inserted into the document.
+	 *
+	 * @param e The document event.
+	 */
+	default void onInsert(DocumentEvent e) {
+	}
+
+
+	/**
+	 * Called when text is removed from the document.
+	 *
+	 * @param e The document event.
+	 */
+	default void onRemove(DocumentEvent e) {
+	}
 
 
 	/**

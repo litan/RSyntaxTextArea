@@ -123,6 +123,7 @@ public class RSyntaxDocument extends RDocument implements Iterable<Token>,
 	@Override
 	protected void fireInsertUpdate(DocumentEvent e) {
 
+		tokenMaker.onInsert(e);
 		cachedTokenList = null;
 
 		/*
@@ -198,6 +199,7 @@ public class RSyntaxDocument extends RDocument implements Iterable<Token>,
 	@Override
 	protected void fireRemoveUpdate(DocumentEvent chng) {
 
+		tokenMaker.onRemove(chng);
 		cachedTokenList = null;
 		Element lineMap = getDefaultRootElement();
 		int numLines = lineMap.getElementCount();

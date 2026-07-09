@@ -9,6 +9,7 @@
 package org.fife.ui.rsyntaxtextarea;
 
 import javax.swing.Action;
+import javax.swing.event.DocumentEvent;
 import javax.swing.text.Segment;
 
 
@@ -146,6 +147,25 @@ public abstract class TokenMakerBase implements TokenMaker {
 	 */
 	protected OccurrenceMarker createOccurrenceMarker() {
 		return new DefaultOccurrenceMarker();
+	}
+
+	/**
+	 * Called when text is inserted into the document. Subclasses can override.
+	 *
+	 * @param e The document event.
+	 */
+	@Override
+	public void onInsert(DocumentEvent e) {
+	}
+
+
+	/**
+	 * Called when text is removed from the document. Subclasses can override.
+	 *
+	 * @param e The document event.
+	 */
+	@Override
+	public void onRemove(DocumentEvent e) {
 	}
 
 
